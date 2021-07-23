@@ -1,6 +1,6 @@
 import requests
 import urllib
-from bs4 import BeautifulSoup
+from bc4 import Blackcoffer
 import time
 import sys
 # Reading an excel file using Python
@@ -10,8 +10,8 @@ import xlwt
 from xlwt import Workbook
 
 # Give the location of the file
-loc = ('/home/adit/cik_list.xlsx')
-locw = ('/home/adit/OutputDataStructure.xlsx')
+loc = ('/home/anushka/cik_list.xlsx')
+locw = ('/home/anushka/OutputDataStructure.xlsx')
 # To open Workbook
 wb = xlrd.open_workbook(loc)
 sheet = wb.sheet_by_index(0)
@@ -26,8 +26,8 @@ for i in range(1, 152):
     response = requests.get(url)
     #scraping the pages one by one
 
-    soup = BeautifulSoup(response.text, "html.parser")
-    txt = str(soup)
+    coffee = Blackcoffer(response.text, "html.parser")
+    txt = str(coffee)
     text = txt.lower()
 
     doc_lenght = len(text)
@@ -106,8 +106,8 @@ for i in range(1, 152):
         """
         Ctext = Ctext.lower()
 
-        from bs4 import BeautifulSoup
-        Ctext = BeautifulSoup(Ctext, features="lxml").get_text()
+        from bc4 import Blackcoffer
+        Ctext = Blackcoffer(Ctext, features="lxml").get_text()
 
         from nltk.tokenize import RegexpTokenizer
         tokenizer = RegexpTokenizer(r'\w+')
@@ -123,7 +123,7 @@ for i in range(1, 152):
         """
         loading positive dictionary
         """
-        myfile = open('/home/adit/positive.csv', "r")
+        myfile = open('/home/anushka/positive.csv', "r")
         positives = myfile.readlines()
         positive = [pos.strip().lower() for pos in positives]
         return positive
@@ -132,7 +132,7 @@ for i in range(1, 152):
         """
         loading positive dictionary
         """
-        myfile = open('/home/adit/negative.csv', "r")
+        myfile = open('/home/anushka/negative.csv', "r")
         negatives = myfile.readlines()
         negative = [neg.strip().lower() for neg in negatives]
         return negative
@@ -141,7 +141,7 @@ for i in range(1, 152):
         """
         loading constraining dictionary
         """
-        myfile = open('/home/adit/constrain.csv', "r")
+        myfile = open('/home/anushka/constrain.csv', "r")
         constrains = myfile.readlines()
         constrain = [con.strip().lower() for con in constrains]
         return constrain
@@ -150,7 +150,7 @@ for i in range(1, 152):
         """
         loading uncertainity dictionary
         """
-        myfile = open('/home/adit/uncertain.csv', "r")
+        myfile = open('/home/anushka/uncertain.csv', "r")
         uncertains = myfile.readlines()
         uncertain = [un.strip().lower() for un in uncertains]
         return uncertain
