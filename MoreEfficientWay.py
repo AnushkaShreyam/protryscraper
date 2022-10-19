@@ -30,7 +30,7 @@ df = pd.read_excel('cik_list.xlsx')
 
 y = 'https://www.sec.gov/Archives/'
 links = [y+x for x in df['SECFNAME']]
-#print(links)
+print(links)
 
 
 # In[ ]:
