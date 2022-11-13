@@ -3,7 +3,6 @@ import urllib
 from bc4 import Blackcoffer
 import time
 import sys
-# Reading an excel file using Python..
 import xlwt
 import xlrd
 import xlsxwriter
