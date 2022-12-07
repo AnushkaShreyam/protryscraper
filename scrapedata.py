@@ -8,6 +8,7 @@ import xlrd
 import xlsxwriter
 from xlwt import Workbook
 
+
 # Give the location of the file
 loc = ('/home/anushka/cik_list.xlsx')
 locw = ('/home/anushka/OutputDataStructure.xlsx')
