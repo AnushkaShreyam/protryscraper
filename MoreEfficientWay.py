@@ -10,10 +10,9 @@ from bs4 import BeautifulSoup
 import re
 import nltk
 
-
 # In[2]:
 
-
+#nltk toolkit
 nltk.download('punkt')
 nltk.download("stopwords")
 
