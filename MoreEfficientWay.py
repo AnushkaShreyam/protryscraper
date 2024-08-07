@@ -265,6 +265,7 @@ for i in range(len(reports)):
                 #print(negative_word_proportion)
                 #print(uncertainity_word_proportion)
                 #print(constraining_word_proportion)
+                #default
                 
                 
                 df.at[i,section_map[j]+'_positive_score'] = positive_score
